@@ -2,38 +2,129 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Ye Are The Light Evangelical Church | Registration</title>
     <link rel="stylesheet" type="text/css" href="./style.css" />
     <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
     <style>
-      /* CSS Patch for long forms and select dropdowns */
+      /* --- UI & Mobile Responsiveness Enhancements --- */
+      
+      /* Logo Styling */
+      .church-logo {
+        width: 90px;
+        height: auto;
+        margin: 0 auto 15px auto;
+        display: block;
+        border-radius: 50%; /* Optional: makes it circular if it's a square image */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Form Scrolling & Sizing Patch */
       form {
         max-height: 75vh;
         overflow-y: auto;
+        overflow-x: hidden;
         scrollbar-width: thin; /* Firefox */
+        padding: 10px 20px; /* Added padding so text doesn't hit the edges */
+        width: 100%;
+        max-width: 400px; /* Keeps it neat on larger screens */
       }
+      
+      /* Custom Scrollbar for Webkit (Chrome/Safari) */
       form::-webkit-scrollbar {
-        width: 5px;
+        width: 6px;
       }
       form::-webkit-scrollbar-thumb {
-        background: #ccc;
-        border-radius: 5px;
+        background: #007bff; /* Adjust to match your theme color */
+        border-radius: 10px;
       }
-      .input-field select, .input-field textarea {
+      form::-webkit-scrollbar-track {
+        background: #f1f1f1; 
+      }
+
+      /* Enhanced Input Fields for Mobile */
+      .input-field {
+        background-color: #f0f0f0;
+        margin: 10px 0;
+        height: 55px; /* Taller for better mobile touch targeting */
+        border-radius: 55px;
+        display: grid;
+        grid-template-columns: 15% 85%;
+        padding: 0 0.4rem;
+        position: relative;
+      }
+
+      .input-field i {
+        text-align: center;
+        line-height: 55px;
+        color: #acacac;
+        transition: 0.5s;
+        font-size: 1.1rem;
+      }
+
+      /* Select and Textarea unified styling */
+      .input-field input, .input-field select, .input-field textarea {
         background: none;
         outline: none;
         border: none;
         line-height: 1;
-        font-weight: 600;
-        font-size: 1.1rem;
+        font-weight: 500;
+        font-size: 1.05rem; /* Better readability */
         color: #333;
         width: 100%;
         font-family: "Poppins", sans-serif;
       }
+      
+      .input-field input::placeholder, .input-field textarea::placeholder {
+        color: #aaa;
+        font-weight: 500;
+      }
+
       .input-field textarea {
-        padding-top: 15px;
+        padding-top: 18px;
         resize: none;
+        height: 100%;
+      }
+
+      .btn {
+        width: 100%; /* Full width button on mobile */
+        height: 50px;
+        border: none;
+        outline: none;
+        border-radius: 49px;
+        cursor: pointer;
+        background-color: #007bff; /* Primary color */
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: 600;
+        margin: 15px 0;
+        transition: 0.5s;
+      }
+
+      .btn:hover {
+        background-color: #0056b3;
+      }
+
+      /* --- Strict Mobile Adjustments --- */
+      @media (max-width: 870px) {
+        .container {
+          min-height: 800px;
+          height: 100vh;
+        }
+        form {
+          max-height: 65vh; /* Leaves room for the mobile keyboard */
+          padding: 5px 15px;
+        }
+        .input-field {
+          height: 50px;
+        }
+        .input-field i {
+          line-height: 50px;
+        }
+        .church-logo {
+          width: 75px; /* Slightly smaller logo on mobile */
+          margin-bottom: 10px;
+        }
       }
     </style>
   </head>
@@ -43,7 +134,10 @@
         <div class="signin-signup">
           
           <form id="first-timer-form" class="sign-in-form">
-            <div class="input-field" style="margin-top: 20px;"><i class="fas fa-user"></i><input type="text" name="name" placeholder="Full Name" required /></div>
+            <img src="./churchlogo.png" alt="Church Logo" class="church-logo" />
+            <h2 class="title" style="text-align: center; margin-bottom: 10px;">First Timer</h2>
+            
+            <div class="input-field"><i class="fas fa-user"></i><input type="text" name="name" placeholder="Full Name" required /></div>
             <div class="input-field"><i class="fas fa-map-marker-alt"></i><input type="text" name="address" placeholder="Address" required /></div>
             <div class="input-field"><i class="fas fa-envelope"></i><input type="email" name="email" placeholder="Email Address" required /></div>
             <div class="input-field"><i class="fas fa-phone"></i><input type="tel" name="phone" placeholder="Phone Number" required /></div>
@@ -88,7 +182,10 @@
           </form>
 
           <form id="membership-form" class="sign-up-form">
-            <div class="input-field" style="margin-top: 20px;"><i class="fas fa-user"></i><input type="text" name="name" placeholder="Full Name" required /></div>
+            <img src="./churchlogo.png" alt="Church Logo" class="church-logo" />
+            <h2 class="title" style="text-align: center; margin-bottom: 10px;">Membership</h2>
+
+            <div class="input-field"><i class="fas fa-user"></i><input type="text" name="name" placeholder="Full Name" required /></div>
             <div class="input-field"><i class="fas fa-map-marker-alt"></i><input type="text" name="address" placeholder="Address" required /></div>
             <div class="input-field"><i class="fas fa-envelope"></i><input type="email" name="email" placeholder="Email Address" required /></div>
             <div class="input-field"><i class="fas fa-phone"></i><input type="tel" name="phone" placeholder="Phone Number" required /></div>
@@ -138,7 +235,6 @@
       </div>
       
       <div class="panels-container">
-        
         <div class="panel left-panel">
           <div class="content">
             <h2 style="font-size: 1.5rem; line-height: 1.2; margin-bottom: 5px;">Ye Are The Light Evangelical Church</h2>
