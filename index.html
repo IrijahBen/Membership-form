@@ -1,263 +1,340 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>Ye Are The Light Evangelical Church | Registration</title>
-    <link rel="stylesheet" type="text/css" href="./style.css" />
-    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration | Ye Are The Light Evangelical Church</title>
+    
     <style>
-      /* --- UI & Mobile Responsiveness Enhancements --- */
-      
-      /* Logo Styling */
-      .church-logo {
-        width: 90px;
-        height: auto;
-        margin: 0 auto 15px auto;
-        display: block;
-        border-radius: 50%; 
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      }
+        @import url('https://fonts.googleapis.com/css2?family=Inclusive+Sans&display=swap');
 
-      /* Form Scrolling & Sizing Patch */
-      form {
-        max-height: 75vh;
-        overflow-y: auto;
-        overflow-x: hidden;
-        scrollbar-width: thin; 
-        padding: 10px 20px; 
-        width: 100%;
-        max-width: 400px; 
-      }
-      
-      /* Custom Scrollbar for Webkit (Chrome/Safari) */
-      form::-webkit-scrollbar {
-        width: 6px;
-      }
-      form::-webkit-scrollbar-thumb {
-        background: #007bff; 
-        border-radius: 10px;
-      }
-      form::-webkit-scrollbar-track {
-        background: #f1f1f1; 
-      }
-
-      /* Enhanced Input Fields for Mobile */
-      .input-field {
-        background-color: #f0f0f0;
-        margin: 10px 0;
-        height: 55px; 
-        border-radius: 55px;
-        display: grid;
-        grid-template-columns: 15% 85%;
-        padding: 0 0.4rem;
-        position: relative;
-      }
-
-      .input-field i {
-        text-align: center;
-        line-height: 55px;
-        color: #acacac;
-        transition: 0.5s;
-        font-size: 1.1rem;
-      }
-
-      /* Select and Textarea unified styling */
-      .input-field input, .input-field select, .input-field textarea {
-        background: none;
-        outline: none;
-        border: none;
-        line-height: 1;
-        font-weight: 500;
-        font-size: 1.05rem; 
-        color: #333;
-        width: 100%;
-        font-family: "Poppins", sans-serif;
-      }
-      
-      .input-field input::placeholder, .input-field textarea::placeholder {
-        color: #aaa;
-        font-weight: 500;
-      }
-
-      .input-field textarea {
-        padding-top: 18px;
-        resize: none;
-        height: 100%;
-      }
-
-      .btn {
-        width: 100%; 
-        height: 50px;
-        border: none;
-        outline: none;
-        border-radius: 49px;
-        cursor: pointer;
-        background-color: #007bff; 
-        color: #fff;
-        text-transform: uppercase;
-        font-weight: 600;
-        margin: 15px 0;
-        transition: 0.5s;
-      }
-
-      .btn:hover {
-        background-color: #0056b3;
-      }
-
-      /* --- Strict Mobile Adjustments --- */
-      @media (max-width: 870px) {
-        .container {
-          min-height: 800px;
-          height: 100vh;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        form {
-          max-height: 65vh; 
-          padding: 5px 15px;
+
+        body {
+            font-family: 'Inclusive Sans', sans-serif;
+            width: 100%;
+            min-height: 100vh; 
+            padding: 40px 0;
+            /* Update your background image path if needed */
+            background-image: linear-gradient(rgba(12, 12, 12, 0.6),rgba(12, 12, 12, 0.6)), url(./imgs/1.jpg);
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-        .input-field {
-          height: 50px;
+
+        .main-container {
+            background: #fff;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 450px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
-        .input-field i {
-          line-height: 50px;
-        }
+
         .church-logo {
-          width: 75px; 
-          margin-bottom: 10px;
+            width: 70px;
+            margin-bottom: 15px;
+            border-radius: 50%;
         }
-      }
+
+        form {
+            display: flex; /* Default state */
+            flex-direction: column;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Hide the membership form by default */
+        #membership-form {
+            display: none; 
+        }
+
+        .header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-weight: 600;
+            font-size: 1.4rem;
+            color: #111;
+        }
+
+        .header p {
+            margin-top: 5px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #555;
+        }
+
+        .header .line {
+            background: rgba(86, 166, 86, 0.838);
+            padding: 1.5px;
+            width: 50px;
+            margin-top: 15px;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        input, select, textarea {
+            margin-bottom: 15px;
+            padding: 12px;
+            border-radius: 5px;
+            border: 1.4px solid lightsteelblue;
+            outline-color: rgba(86, 166, 86, 0.838);
+            font-family: 'Inclusive Sans', sans-serif;
+            font-size: 0.95rem;
+            background-color: #fcfcfc;
+            width: 100%;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .btn {
+            margin-top: 10px;
+            border: none;
+            background: rgba(86, 166, 86, 0.838);
+            padding: 12px;
+            border-radius: 5px;
+            color: #fff;
+            font-weight: bold;
+            font-size: 1rem;
+            text-transform: uppercase;
+            transition: all ease-in-out 0.3s;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: rgba(64, 128, 64, 0.838);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .footer p {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .footer p a {
+            color: rgba(86, 166, 86, 0.838);
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all ease-in-out 0.3s;
+        }
+
+        .footer p a:hover {
+            text-decoration: underline;
+        }
     </style>
-  </head>
-  <body>
-    <div class="container">
-      <div class="forms-container">
-        <div class="signin-signup">
-          
-          <form id="first-timer-form" class="sign-in-form">
-            <img src="./img/churchlogo.png" alt="Church Logo" class="church-logo" />
-            <h2 class="title" style="text-align: center; margin-bottom: 10px;">First Timer</h2>
-            
-            <div class="input-field"><i class="fas fa-user"></i><input type="text" name="name" placeholder="Full Name" required /></div>
-            <div class="input-field"><i class="fas fa-map-marker-alt"></i><input type="text" name="address" placeholder="Address" required /></div>
-            <div class="input-field"><i class="fas fa-envelope"></i><input type="email" name="email" placeholder="Email Address" required /></div>
-            <div class="input-field"><i class="fas fa-phone"></i><input type="tel" name="phone" placeholder="Phone Number" required /></div>
-            
-            <div class="input-field">
-              <i class="fas fa-venus-mars"></i>
-              <select name="gender" required>
-                <option value="" disabled selected>Gender</option>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-              </select>
-            </div>
-            
-            <div class="input-field">
-              <i class="fas fa-info-circle"></i>
-              <select name="learnAbout" required>
-                <option value="" disabled selected>How did you learn about us?</option>
-                <option value="Social Media">Social Media</option>
-                <option value="Friend/Family">Friend/Family</option>
-                <option value="Flyer/Banner">Flyer/Banner</option>
-                <option value="Evangelism">Evangelism</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
+</head>
+<body>
 
-            <div class="input-field">
-              <i class="fas fa-heart"></i>
-              <select name="worshipAgain" required>
-                <option value="" disabled selected>Would you love to worship again?</option>
-                <option value="Yes">Yes</option>
-                <option value="No">No</option>
-                <option value="Maybe">Maybe</option>
-              </select>
-            </div>
-
-            <div class="input-field" style="height: 80px; border-radius: 20px;">
-              <i class="fas fa-comment"></i>
-              <textarea name="comments" placeholder="Other Comments..."></textarea>
-            </div>
-
-            <input type="submit" value="Submit Form" class="btn solid" />
-          </form>
-
-          <form id="membership-form" class="sign-up-form">
-            <img src="./img/churchlogo.png" alt="Church Logo" class="church-logo" />
-            <h2 class="title" style="text-align: center; margin-bottom: 10px;">Membership</h2>
-
-            <div class="input-field"><i class="fas fa-user"></i><input type="text" name="name" placeholder="Full Name" required /></div>
-            <div class="input-field"><i class="fas fa-map-marker-alt"></i><input type="text" name="address" placeholder="Address" required /></div>
-            <div class="input-field"><i class="fas fa-envelope"></i><input type="email" name="email" placeholder="Email Address" required /></div>
-            <div class="input-field"><i class="fas fa-phone"></i><input type="tel" name="phone" placeholder="Phone Number" required /></div>
-            
-            <div class="input-field">
-              <i class="fas fa-venus-mars"></i>
-              <select name="gender" required>
-                <option value="" disabled selected>Gender</option>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-              </select>
-            </div>
-
-            <div class="input-field"><i class="fas fa-birthday-cake"></i><input type="text" name="birthday" placeholder="Birthday (Month & Day)" required /></div>
-            
-            <div class="input-field">
-              <i class="fas fa-user-friends"></i>
-              <select name="relationship" required>
-                <option value="" disabled selected>Relationship Status</option>
-                <option value="Single">Single</option>
-                <option value="Married">Married</option>
-              </select>
-            </div>
-
-            <div class="input-field"><i class="fas fa-ring"></i><input type="text" name="anniversary" placeholder="Marriage Anniversary (If any)" /></div>
-
-            <div class="input-field">
-              <i class="fas fa-users-cog"></i>
-              <select name="workforce" required>
-                <option value="" disabled selected>Workforce Department</option>
-                <option value="Choir">Choir</option>
-                <option value="Ushers">Ushers</option>
-                <option value="Ambience/Sanitation">Ambience/Sanitation</option>
-                <option value="Media">Media</option>
-                <option value="Prayer">Prayer</option>
-                <option value="Moderator">Moderator</option>
-                <option value="Facility Management">Facility Management</option>
-                <option value="Welfare">Welfare</option>
-                <option value="Follow-up">Follow-up</option>
-              </select>
-            </div>
-
-            <input type="submit" value="Submit Form" class="btn solid" />
-          </form>
-
-        </div>
-      </div>
-      
-      <div class="panels-container">
-        <div class="panel left-panel">
-          <div class="content">
-            <h2 style="font-size: 1.5rem; line-height: 1.2; margin-bottom: 5px;">Ye Are The Light Evangelical Church</h2>
-            <h3>Membership Form</h3>
-            <p>Already part of the family? Update your details or join a workforce department to serve!</p>
-            <button class="btn transparent" id="sign-up-btn">Switch Form</button>
-          </div>
-          <img src="./img/log.svg" class="image" alt="">
-        </div>
-
-        <div class="panel right-panel">
-          <div class="content">
-            <h2 style="font-size: 1.5rem; line-height: 1.2; margin-bottom: 5px;">Ye Are The Light Evangelical Church</h2>
-            <h3>First Timer Form</h3>
-            <p>Worshipping for the first time? We are so glad to have you! Please fill in your details.</p>
-            <button class="btn transparent" id="sign-in-btn">Switch Form</button>
-          </div>
-          <img src="./img/register.svg" class="image" alt="">
-        </div>
+    <div class="main-container">
         
-      </div>
+        <form id="first-timer-form">
+            <div class="header">
+                <img src="./img/churchlogo.png" alt="Church Logo" class="church-logo" />
+                <h1>FIRST TIMER REGISTRATION</h1>
+                <p>Welcome! We are so glad to have you.</p>
+                <div class="line"></div>
+            </div>
+
+            <div class="content">
+                <label>Full Name*</label>
+                <input type="text" name="name" placeholder="Enter Your Full Name..." required>
+
+                <label>Address*</label>
+                <input type="text" name="address" placeholder="Enter Your Address..." required>
+
+                <label>Email Address*</label>
+                <input type="email" name="email" placeholder="Enter Your Email..." required>
+
+                <label>Phone Number*</label>
+                <input type="tel" name="phone" placeholder="Enter Your Phone Number..." required>
+
+                <label>Gender*</label>
+                <select name="gender" required>
+                    <option value="" disabled selected>Select Gender...</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+
+                <label>How did you learn about us?*</label>
+                <select name="learnAbout" required>
+                    <option value="" disabled selected>Select Option...</option>
+                    <option value="Social Media">Social Media</option>
+                    <option value="Friend/Family">Friend/Family</option>
+                    <option value="Flyer/Banner">Flyer/Banner</option>
+                    <option value="Evangelism">Evangelism</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <label>Would you love to worship again?*</label>
+                <select name="worshipAgain" required>
+                    <option value="" disabled selected>Select Option...</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                    <option value="Maybe">Maybe</option>
+                </select>
+
+                <label>Additional Comments</label>
+                <textarea name="comments" placeholder="Any prayer requests or comments?"></textarea>
+
+                <button type="submit" class="btn solid">Submit Form</button>
+            </div>
+
+            <div class="footer">
+                <p>Already part of the family? <a onclick="toggleForms('membership')">Membership Form</a></p>
+            </div>
+        </form>
+
+        <form id="membership-form">
+            <div class="header">
+                <img src="./img/churchlogo.png" alt="Church Logo" class="church-logo" />
+                <h1>MEMBERSHIP UPDATE</h1>
+                <p>Update details or join a workforce!</p>
+                <div class="line"></div>
+            </div>
+
+            <div class="content">
+                <label>Full Name*</label>
+                <input type="text" name="name" placeholder="Enter Your Full Name..." required>
+
+                <label>Address*</label>
+                <input type="text" name="address" placeholder="Enter Your Address..." required>
+
+                <label>Email Address*</label>
+                <input type="email" name="email" placeholder="Enter Your Email..." required>
+
+                <label>Phone Number*</label>
+                <input type="tel" name="phone" placeholder="Enter Your Phone Number..." required>
+
+                <label>Gender*</label>
+                <select name="gender" required>
+                    <option value="" disabled selected>Select Gender...</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+
+                <label>Birthday*</label>
+                <input type="text" name="birthday" placeholder="e.g. October 15" required>
+
+                <label>Relationship Status*</label>
+                <select name="relationship" required>
+                    <option value="" disabled selected>Select Status...</option>
+                    <option value="Single">Single</option>
+                    <option value="Married">Married</option>
+                </select>
+
+                <label>Marriage Anniversary</label>
+                <input type="text" name="anniversary" placeholder="If applicable...">
+
+                <label>Workforce Department*</label>
+                <select name="workforce" required>
+                    <option value="" disabled selected>Select Department...</option>
+                    <option value="Choir">Choir</option>
+                    <option value="Ushers">Ushers</option>
+                    <option value="Ambience/Sanitation">Ambience/Sanitation</option>
+                    <option value="Media">Media</option>
+                    <option value="Prayer">Prayer</option>
+                    <option value="Moderator">Moderator</option>
+                    <option value="Facility Management">Facility Management</option>
+                    <option value="Welfare">Welfare</option>
+                    <option value="Follow-up">Follow-up</option>
+                </select>
+
+                <button type="submit" class="btn solid">Submit Form</button>
+            </div>
+
+            <div class="footer">
+                <p>Worshipping for the first time? <a onclick="toggleForms('first-timer')">First Timer Form</a></p>
+            </div>
+        </form>
+
     </div>
 
-    <script src="./app.js"></script>
-  </body>
+    <script>
+        // --- 1. Form Toggling Logic ---
+        const firstTimerForm = document.getElementById('first-timer-form');
+        const membershipForm = document.getElementById('membership-form');
+
+        function toggleForms(target) {
+            if (target === 'membership') {
+                firstTimerForm.style.display = 'none';
+                membershipForm.style.display = 'flex';
+            } else {
+                membershipForm.style.display = 'none';
+                firstTimerForm.style.display = 'flex';
+            }
+        }
+
+        // --- 2. Google Sheets Submission Logic ---
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxQsCfd2lBTF_7kzL9hWEZIFx9tGRcj0DlEM1yDRDHG9mf9w8XMFV_3gzaOadvr1V2AtA/exec';
+
+        firstTimerForm.addEventListener('submit', e => {
+            e.preventDefault();
+            submitToGoogleSheet(firstTimerForm, 'FirstTimer');
+        });
+
+        membershipForm.addEventListener('submit', e => {
+            e.preventDefault();
+            submitToGoogleSheet(membershipForm, 'Membership');
+        });
+
+        function submitToGoogleSheet(form, formType) {
+            const btn = form.querySelector('.btn.solid');
+            const originalText = btn.innerText;
+            btn.innerText = "Submitting...";
+
+            const formData = new FormData(form);
+            formData.append('formType', formType);
+
+            fetch(scriptURL, { method: 'POST', body: formData })
+                .then(response => {
+                    alert('Registration Successful! God bless you.');
+                    form.reset();
+                    btn.innerText = originalText;
+                })
+                .catch(error => {
+                    console.error('Error!', error.message);
+                    alert('There was an error submitting your form. Please try again.');
+                    btn.innerText = originalText;
+                });
+        }
+    </script>
+</body>
 </html>
